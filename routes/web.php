@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\KategoriController;
 
 Route::get('/', function () {
     return view('home');
@@ -16,3 +17,5 @@ Route::get('/produk', [ProdukController::class, 'index'])
 
 Route::get('/produk/{id}',[ProdukController::class,'show'])
 ->name('produk.show');
+
+Route::resource('kategori', KategoriController::class);

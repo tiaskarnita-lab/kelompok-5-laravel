@@ -6,59 +6,64 @@ use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    private function dataKategori(){
+        return [
+            ['nama_kategori' => 'Makanan'],
+            ['nama_kategori' => 'Makanan'],
+            ['nama_kategori' => 'Makanan'],
+        ];
+    }
+
     public function index()
     {
-        //
+        $kategoris = $this->dataKategori();
+
+        return view('kategori.index', compact('kategoris'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('kategori.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        return "Kategori dengan nama: {$request->nama_kategori} telah berhasil disimpan";
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $kategoris = $this->dataKategori();
+
+        if($id >= count($kategoris)) {
+            abort(404);
+        }
+
+        $kategori = $kategoris[$id];
+
+        return view('kategori.show', compact('kategori'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $kategoris = $this->dataKategori();
+
+        if($id >= count($kategoris)) {
+            abort(404);
+        }
+
+        $kategori = $kategoris[$id];
+
+        return view('kategori.edit', compact('id', 'kategori'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        return "Kategori dengan id: {$id} telah berhasil diupdate";
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        return "Kategori dengan id: {$id} telah berhasil dihapus";
     }
 }
