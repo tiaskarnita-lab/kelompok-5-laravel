@@ -20,5 +20,21 @@ class ProdukController extends Controller
 
         return view('produk.index', compact('produks'));
     }
+
+//...
+
+public function show($id)
+{
+    $produks = $this->dataProduk();
+
+    if ($id >= count($produks)) {
+        abort(404);
+    }
+
+    $produk = $produks[$id];
+
+    return view('produk.show', compact('produk'));
 }
 
+//...
+}
