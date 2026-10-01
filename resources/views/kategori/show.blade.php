@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Detil Kategori</h1>
 
 <p>
@@ -9,3 +13,4 @@
         Kembali
     </a>
 </p>
+@endsection

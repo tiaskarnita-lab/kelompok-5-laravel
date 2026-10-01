@@ -20,10 +20,7 @@ class ProdukController extends Controller
 
         return view('produk.index', compact('produks'));
     }
-
-//...
-
-public function show($id)
+    public function show($id)
 {
     $produks = $this->dataProduk();
 
@@ -35,6 +32,4 @@ public function show($id)
 
     return view('produk.show', compact('produk'));
 }
-
-//...
 }

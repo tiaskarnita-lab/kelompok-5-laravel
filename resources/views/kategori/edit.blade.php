@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Ubah Kategori</h1>
 
 <form action="{{ route('kategori.update', $id) }}" method="post">
@@ -15,3 +19,4 @@
         Kembali
     </a>
 </p>
+@endsection

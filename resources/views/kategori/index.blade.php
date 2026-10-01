@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Daftar Kategori</h1>
 
 <p>
@@ -43,3 +47,4 @@
         @endforeach
     </tbody>
 </table>
+@endsection

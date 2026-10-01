@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Detil Produk</h1>
 
 <p>
@@ -10,3 +14,4 @@
         Kembali ke Produk
     </a>
 </p>
+@endsection

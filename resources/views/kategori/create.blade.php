@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Buat Kategori</h1>
 
 <form action="{{ route('kategori.store') }}" method="post">
@@ -13,3 +17,4 @@
         Kembali
     </a>
 </p>
+@endsection

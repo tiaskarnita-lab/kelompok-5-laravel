@@ -1,4 +1,8 @@
-<h1>Daftar Produk</h1>
+@extends('layouts.app')
+
+@section('content')
+
+<h4>Daftar Produk</h4>
 
 <table border="1" cellpadding="5">
     <thead>
@@ -27,3 +31,4 @@
         @endforeach
     </tbody>
 </table>
+@endsection
