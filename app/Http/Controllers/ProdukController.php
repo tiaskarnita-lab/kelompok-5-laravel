@@ -2,34 +2,66 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
 {
-    private function dataProduk(){
-        return [
-            ['nama_produk' => 'Mie Ayam', 'harga' => '15000'],
-            ['nama_produk' => 'Es Gabus', 'harga' => '5000'],
-            ['nama_produk' => 'Nuget Borax', 'harga' => '1000'],
-        ];
-    }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $produks = $this->dataProduk();
+        $produks =Produk::paginate(5);
 
         return view('produk.index', compact('produks'));
     }
-    public function show($id)
-{
-    $produks = $this->dataProduk();
 
-    if ($id >= count($produks)) {
-        abort(404);
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
-    $produk = $produks[$id];
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 
-    return view('produk.show', compact('produk'));
-}
+    /**
+     * Display the specified resource.
+     */
+    public function show(Produk $produk)
+    {
+     return view('produk.show', compact('produk'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Produk $produk)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Produk $produk)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Produk $produk)
+    {
+        //
+    }
 }

@@ -2,13 +2,12 @@
 
 @section('content')
 
-<h1>Detil Produk</h1>
+<h1>Detail Produk</h1>
 
-<p>
+<Stok>
     Nama Produk : {{ $produk['nama_produk'] }} <br>
-    Harga : {{ number_format($produk['harga']) }}
-</p>
-
+    Harga : {{ number_format($produk['harga']) }} <br>
+    Stok : {{$produk->stok}}</Stok>
 <p>
     <a href="{{ route('produk.index') }}">
         Kembali ke Produk

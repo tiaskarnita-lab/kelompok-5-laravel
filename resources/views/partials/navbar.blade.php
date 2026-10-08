@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="pink">
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
             Kelompok 5
@@ -18,6 +18,10 @@
 
                 <x-nav-item :href="route('produk.index')" :active="request()->routeIs('produk.*')">
                     Produk
+                </x-nav-item>
+
+                <x-nav-item :href="route('kategori.index')" :active="request()->routeIs('kategori.*')">
+                    Kategori
                 </x-nav-item>
 
                 <x-nav-item :href="route('about')" :active="request()->routeIs('about')">
