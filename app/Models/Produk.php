@@ -7,19 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produk extends Model
 {
+    use HasFactory;
+
     protected $table = 'produk';
+
     protected $fillable = [
         'nama_produk',
         'harga',
-        'stok'
+        'stok',
     ];
-}
-
-
-    protected $fillable = [
-    'nama_produk',
-    'deskripsi',
-    'harga',
-    'stok',
-];
 }

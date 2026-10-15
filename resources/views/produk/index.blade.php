@@ -19,8 +19,19 @@
 </style>
 <h4>Daftar Produk</h4>
 
-<table border="1" cellpadding="10"
-style="border-collapse: collapse;">
+<p>
+<a href="{{route('produk.create')}}">
+    Tambah Produk
+</a>
+</p>
+
+@session('success')
+<p style="color:blueviolet;">
+    {{ session('success') }}
+</p>
+@endsession
+
+<table border="1" cellpadding="5" style="width: 50%; border-collapse: collapse;">
     <thead>
         <tr>
             <th>ID</th>
@@ -42,10 +53,31 @@ style="border-collapse: collapse;">
                 <td>
                     {{ $produk->stok }}
                 </td>
+
                     <td>
-                    <a href="{{ route('produk.show', $produk->id) }}">
+                    <a href="{{ route('produk.show', $produk->id) }}"
+                        style="background: #28a745; color: white; padding: 5px 10px;
+                        border-radius: 3px; text-decoration: none; display: inline-block; margin-right: 5px;">
                         Lihat Detail
                     </a>
+
+                    <a href="{{ route('produk.edit', $produk->id) }}"
+                        style="background: #007bff; color: white; padding: 5px 10px;
+                        border-radius: 3px; text-decoration: none; display: inline-block; margin-right: 5px">
+                        Edit
+                    </a>
+
+                    <form action="{{ route('produk.destroy', $produk->id) }}"
+                        method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')"
+                        style="background: #dc3545; color: white; border: none; padding: 5px 10px;
+                        border-radius: 3px; cursor: pointer;">
+                         Hapus
+                        </button>
+                    </form>
+
                 </td>
             </tr>
             @empty

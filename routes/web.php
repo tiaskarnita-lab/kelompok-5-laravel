@@ -11,10 +11,6 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/produk', [ProdukController::class, 'index'])
-    ->name('produk.index');
-
-Route::get('/produk/{produk}', [ProdukController::class, 'show'])
-    ->name('produk.show');
+Route::resource('produk', ProdukController::class);
 
 Route::resource('kategori', KategoriController::class);
